@@ -21,7 +21,7 @@ let row1=[null,null,null];
 let row2=[null,null,null];
 let row3=[null,null,null];
 let gameEnd='';
-let player='';
+let player='one';
 let turns=[];
 
 
@@ -35,7 +35,6 @@ game.innerHTML=`<p id="p1">PLAYER-1 :</p>
   if(x_o==='not choosed'){
 x_o=1;
 p1choice(x_o);
-player='one';
 turns.push(player);
 playerTurn();
   }
@@ -44,7 +43,6 @@ playerTurn();
   if(x_o==='not choosed'){
 x_o=0; 
 p1choice(x_o);
-player='one';
 turns.push(player);
 playerTurn();
   }
@@ -53,16 +51,16 @@ let i=0;
 const playerTurn=()=>{ 
   switch(turns[i]){
     case 'one':if(x_o==1||x_o==3||x_o==5||x_o==7||x_o==9){
-  game.innerHTML=`<div id="Player-1"><span>Player-1</span></div>`; 
+  game.innerHTML=`<div id="Player-1"><span>Player-1</span></div></div><div id="pt1">X</div>`; 
 }else {
-  game.innerHTML=`<div id="Player-1"><span>Player-1</span></div>`; 
+  game.innerHTML=`<div id="Player-1"><span>Player-1</span></div></div><div id="pt1">O</div>`; 
 }
 player='two';
 break;
 case 'two':if(x_o==1||x_o==3||x_o==5||x_o==7||x_o==9){
-  game.innerHTML=`<div id="Player-2"><span>Player-2</span></div>`; 
+  game.innerHTML=`<div id="Player-2"><span>Player-2</span></div></div><div id="pt2">X</div>`; 
 }else {     
-  game.innerHTML=`<div id="Player-2"><span>Player-2</span></div>`; 
+  game.innerHTML=`<div id="Player-2"><span>Player-2</span></div></div><div id="pt2">O</div>`; 
 }
 player='one';
 break;
@@ -418,6 +416,7 @@ signb3r2.innerHTML='';
 signb1r3.innerHTML='';
 signb2r3.innerHTML='';
 signb3r3.innerHTML='';
+player='one';
 }
 
  
